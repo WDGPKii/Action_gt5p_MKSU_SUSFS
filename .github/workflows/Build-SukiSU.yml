@@ -157,8 +157,8 @@ jobs:
           cp ../../SukiSU_patch/hooks/new_hooks.patch ./
           echo "正在打vfs补丁"
           patch -p1 -F 3 < new_hooks.patch
-          patch -p1 < ../../.repo/manifests/001-lz4.patch
-          patch -p1 < ../../.repo/manifests/002-zstd.patch
+          patch -p1 < ../../.repo/manifests/patch/001-lz4.patch
+          patch -p1 < ../../.repo/manifests/patch/002-zstd.patch
           echo "完成"
 
           #if [ "${{ github.event.inputs.KERNEL_VERSION }}" != "5.10" ]; then
