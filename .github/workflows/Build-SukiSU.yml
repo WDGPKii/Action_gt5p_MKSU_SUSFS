@@ -9,7 +9,7 @@ on:
       FEIL:
         description: "配置文件"
         required: true
-        default: 'gt5p'
+        default: 'gt5pro'
       CPUD:
         description: "处理器代号"
         required: true
