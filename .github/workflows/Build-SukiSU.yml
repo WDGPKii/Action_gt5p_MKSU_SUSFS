@@ -144,7 +144,7 @@ jobs:
 
 
 
-          ls kernel_workspace/.repo/manifests/patch
+          ls kernel_workspace
           patch -p1 < ../../.repo/manifests/patch/001-lz4.patch
           patch -p1 < ../../.repo/manifests/patch/002-zstd.patch
 
