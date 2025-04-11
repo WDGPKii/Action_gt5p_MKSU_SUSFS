@@ -143,8 +143,8 @@ jobs:
           echo "完成"
 
 
-
-          ls kernel_workspace
+          cd kernel_workspace
+          ls 
           patch -p1 < ../../.repo/manifests/patch/001-lz4.patch
           patch -p1 < ../../.repo/manifests/patch/002-zstd.patch
 
