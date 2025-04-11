@@ -142,14 +142,6 @@ jobs:
           patch -p1 < 50_add_susfs_in_gki-${{ github.event.inputs.ANDROID_VERSION }}-${{ github.event.inputs.KERNEL_VERSION }}.patch || true
           echo "完成"
 
-
-          cd ../../
-          cd kernel_workspace
-          ls 
-          patch -p1 < ../../.repo/manifests/patch/001-lz4.patch
-          patch -p1 < ../../.repo/manifests/patch/002-zstd.patch
-
-
           
       - name: Apply Hide Stuff Patches
         if: ${{ github.event.inputs.SUSFS_ENABLED == 'true' }}
@@ -163,11 +155,14 @@ jobs:
         if: ${{ github.event.inputs.VFS_patch_ENABLED == 'enable' }}
         run: |
           cd kernel_workspace/kernel_platform/common
+          curl https://github.com/WDGPKii/Action_gt5p_MKSU_SUSFS.git
+          cp Action_gt5p_MKSU_SUSFS/patch/001-lz4.patch ./
+          cp Action_gt5p_MKSU_SUSFS/patch/002-zstd.patch ./
           cp ../../SukiSU_patch/hooks/new_hooks.patch ./
           echo "正在打vfs补丁"
           patch -p1 -F 3 < new_hooks.patch
-          patch -p1 < ../../.repo/manifests/patch/001-lz4.patch
-          patch -p1 < ../../.repo/manifests/patch/002-zstd.patch
+          patch -p1 < 001-lz4.patch
+          patch -p1 < 002-zstd.patch
           echo "完成"
 
           #if [ "${{ github.event.inputs.KERNEL_VERSION }}" != "5.10" ]; then
