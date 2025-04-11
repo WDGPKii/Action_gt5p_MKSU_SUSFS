@@ -170,7 +170,7 @@ jobs:
         if: ${{ github.event.inputs.VFS_patch_ENABLED == 'enable' }}
         run: |
           cd kernel_workspace/kernel_platform/common
-          curl https://github.com/WDGPKii/Action_gt5p_MKSU_SUSFS.git
+          git clone https://github.com/WDGPKii/Action_gt5p_MKSU_SUSFS.git
           ls
           cp ./Action_gt5p_MKSU_SUSFS/patch/001-lz4.patch ./
           cp ./Action_gt5p_MKSU_SUSFS/patch/002-zstd.patch ./
