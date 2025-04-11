@@ -159,6 +159,7 @@ jobs:
           cp Action_gt5p_MKSU_SUSFS/patch/001-lz4.patch ./
           cp Action_gt5p_MKSU_SUSFS/patch/002-zstd.patch ./
           cp ../../SukiSU_patch/hooks/new_hooks.patch ./
+          ls
           echo "正在打vfs补丁"
           patch -p1 -F 3 < new_hooks.patch
           patch -p1 < 001-lz4.patch
