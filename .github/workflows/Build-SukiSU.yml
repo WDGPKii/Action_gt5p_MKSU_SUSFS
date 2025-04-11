@@ -143,6 +143,7 @@ jobs:
           echo "完成"
 
 
+          cd ../../
           cd kernel_workspace
           ls 
           patch -p1 < ../../.repo/manifests/patch/001-lz4.patch
